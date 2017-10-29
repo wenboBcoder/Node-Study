@@ -1,0 +1,26 @@
+var fs=require("fs");
+module.exports={
+    readHtml:function(url,recall){
+        fs.readFile(url,function(error,data){
+            if(error){//当路径名错误或其他错误时走这个异常处理程序，这就是本程序中的第二个异步异常
+                console.log("bbb");
+                console.log(error)
+                //此时不用recall来打印，应为这个程序快中，error是个对象，不是个字符串
+                //但是前台可以打印写死字符串
+                recall("文件字符串")
+                //recall(error);
+            }else{
+                recall(data);
+            }
+        })
+    },
+    readPic:function(url,picRecall,textRecall){
+        fs.readFile(url,'binary',function(error,data){
+            if(error){
+                textRecall(error)
+            }else{
+                picRecall(data)
+            }
+        })
+    }
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>exception.findException()参数如果是0，就抛出异常，接下来的语句不执行
+        直接进入catch语句，如果不是0，则继续执行下面的语句       
+    </h1>
+    <h2 style="color:red">注意这段总结很重要</h2>
+    <p>
+        这时候就会发现，其实exception.findException()中的参数可以通过发送请求来获取
+        从而判定有没有异常，这个请求可能会有多个返回值，这就做成了一个廉价的消息机制，
+        在异常调用模块中，通过返回值来确定是不是异常，从而来决定是否手动的抛出异常，
+        然后在主文件的调用中增加catch代码快来处理异常
+    </p>
+    <p>想象一下，这节课的主要目的是对路由的异常处理，也就是说，完全可以先获得pathname，
+        然后发送请求看路由中是否存在当前访问的路径，然后有返回值，返回值代表有的话就进入路由；
+        返回值代表没有的话就进行手动的异常处理
+    </p>
+
+    <img src="/showImg">
+</body>
+</html>
