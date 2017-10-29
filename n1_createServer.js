@@ -23,3 +23,4 @@ http.createServer(function(request,response){
 console.log("程序主干结束")
 /* 注意：在执行第二段内容时，会发现在dos窗口中先答应最后一行代码，然后在访问页面后才能打印if语句中的代码；
 这是因为node是异步执行，所有需要访问的请求都会直接加载到内存中，然后继续执行下面的代码 */
+
